@@ -1,0 +1,6 @@
+.stack-work/
+learning-rwh.cabal
+*~
+/*.iml
+*.hi
+*.o
