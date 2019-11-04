@@ -1,8 +1,8 @@
-{ mkDerivation, base, bytestring, directory, hpack, stdenv }:
+{ nix-gitignore, mkDerivation, base, bytestring, directory, hpack, stdenv }:
 mkDerivation {
   pname = "learning-rwh";
   version = "0.1.0.0";
-  src = ./.;
+  src = nix-gitignore.gitignoreSourcePure [./.gitignore] ./.;
   isLibrary = true;
   isExecutable = true;
   libraryHaskellDepends = [ base bytestring directory ];

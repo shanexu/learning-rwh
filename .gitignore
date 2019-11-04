@@ -4,3 +4,4 @@ learning-rwh.cabal
 /*.iml
 *.hi
 *.o
+/result
