@@ -20,7 +20,7 @@ namesMatching pat
     return [pat | exists]
   | otherwise =
     case splitFileName pat of
-      ("", baseName) -> do
+      ("./", baseName) -> do
         curDir <- getCurrentDirectory
         listMatches curDir baseName
       (dirName, baseName) -> do
