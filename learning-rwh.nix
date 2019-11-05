@@ -1,4 +1,4 @@
-{ nix-gitignore, mkDerivation, base, bytestring, directory, filepath, regex-posix, hpack, stdenv }:
+{ nix-gitignore, mkDerivation, base, bytestring, directory, filepath, regex-posix, time, hpack, stdenv }:
 mkDerivation {
   pname = "learning-rwh";
   version = "0.1.0.0";
@@ -7,7 +7,7 @@ mkDerivation {
   isExecutable = true;
   libraryHaskellDepends = [ base bytestring directory ];
   libraryToolDepends = [ hpack ];
-  executableHaskellDepends = [ base bytestring directory filepath regex-posix ];
+  executableHaskellDepends = [ base bytestring directory filepath regex-posix time ];
   testHaskellDepends = [ base bytestring directory ];
   prePatch = "hpack";
   homepage = "https://github.com/githubuser/learning-rwh#readme";

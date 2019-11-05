@@ -1,5 +1,5 @@
 module RecursiveContents
-  ( getDirectoryContents
+  ( getRecursiveContents
   ) where
 
 import           Control.Monad    (forM)

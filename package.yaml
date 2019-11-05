@@ -25,6 +25,7 @@ dependencies:
 - bytestring
 - regex-posix
 - filepath
+- time
 
 library:
   source-dirs: src
