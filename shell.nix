@@ -1,4 +1,4 @@
 let
-  release = import ./release.nix;
+  default = import ./default.nix;
 in
-  release.env
+  default.env
