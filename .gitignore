@@ -5,3 +5,4 @@ learning-rwh.cabal
 *.hi
 *.o
 /result
+/dist-newstyle/
