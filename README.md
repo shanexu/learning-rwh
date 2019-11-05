@@ -12,5 +12,5 @@ my learning progress.
 use nix to manage ghc dependencies.
 
 ```shell script
-nix-shell --attr env release.nix
+nix-shell
 ```
