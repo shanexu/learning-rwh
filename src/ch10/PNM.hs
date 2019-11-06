@@ -1,6 +1,10 @@
-import qualified Data.ByteString.Lazy       as L
+module PNM
+  ( Greymap(..)
+  ) where
+
+import qualified Data.ByteString.Lazy as L
 import qualified Data.ByteString.Lazy.Char8 as L8
-import           Data.Char                  (isSpace)
+import           Data.Char (isSpace)
 
 main :: IO ()
 main = undefined
