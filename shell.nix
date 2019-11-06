@@ -1,4 +1,19 @@
+with import <nixpkgs> {};
 let
-  default = import ./default.nix;
+  lrwh = (import ./default.nix);
 in
-  default.env
+haskellPackages.shellFor {
+  name = lrwh.env.name;
+  packages = p: [lrwh];
+  buildInputs = [
+    cabal-install
+    haskellPackages.apply-refact
+    haskellPackages.hlint
+    haskellPackages.stylish-haskell
+    haskellPackages.hasktags
+    haskellPackages.hoogle
+    haskellPackages.hindent
+  ];
+}
+
+
