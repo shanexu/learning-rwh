@@ -7,10 +7,16 @@ This is my personal repository for learning [Real World Haskell](http://book.rea
 Perhaps it's the last chance for me to learn haskell. So I open this repository for recording
 my learning progress.
 
-# setup
+# setup environment
 
 use nix to manage ghc dependencies.
 
 ```shell script
 nix-shell
+```
+
+if your are using ```direnv``` just allow the ```.envrc``` file.
+
+```shell script
+direnv allow
 ```
