@@ -1,22 +1,20 @@
-with import <nixpkgs> {};
 let
   lrwh = (import ./default.nix);
   all-hie = (import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {});
+  pkgs = import <nixpkgs> {};
 in
-haskellPackages.shellFor {
+pkgs.haskellPackages.shellFor {
   name = "learning-rwh-nix-shell";
   packages = p: [lrwh];
   buildInputs = [
-    cabal-install
-    bashInteractive
-    haskellPackages.apply-refact
-    haskellPackages.hlint
-    haskellPackages.stylish-haskell
-    haskellPackages.hasktags
-    haskellPackages.hoogle
-    haskellPackages.hindent
+    pkgs.bashInteractive
+    pkgs.cabal-install
+    pkgs.haskellPackages.apply-refact
+    pkgs.haskellPackages.hlint
+    pkgs.haskellPackages.stylish-haskell
+    pkgs.haskellPackages.hasktags
+    pkgs.haskellPackages.hoogle
+    pkgs.haskellPackages.hindent
     (all-hie.selection { selector = p: { inherit (p) ghc865; }; })
   ];
 }
-
-
