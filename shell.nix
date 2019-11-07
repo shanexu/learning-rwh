@@ -4,10 +4,11 @@ let
   all-hie = (import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {});
 in
 haskellPackages.shellFor {
-  name = lrwh.env.name;
+  name = "learning-rwh-nix-shell";
   packages = p: [lrwh];
   buildInputs = [
     cabal-install
+    bashInteractive
     haskellPackages.apply-refact
     haskellPackages.hlint
     haskellPackages.stylish-haskell
