@@ -27,6 +27,8 @@ dependencies:
 - filepath
 - time
 - QuickCheck
+- array
+- containers
 
 library:
   source-dirs: src

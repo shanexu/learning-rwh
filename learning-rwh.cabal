@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 35a8a87de87f04d52008ef7a8c7b9dc7a60bb3aa57f5f9c0c6d2462742daf66c
+-- hash: 5b9135ea3b5353d27001b309a80e0c1a4e0e0db71f40738b95d2787937178874
 
 name:           learning-rwh
 version:        0.1.0.0
@@ -34,8 +34,10 @@ library
       src
   build-depends:
       QuickCheck
+    , array
     , base >=4.7 && <5
     , bytestring
+    , containers
     , directory
     , filepath
     , regex-posix
@@ -51,8 +53,10 @@ executable learning-rwh-exe
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       QuickCheck
+    , array
     , base >=4.7 && <5
     , bytestring
+    , containers
     , directory
     , filepath
     , learning-rwh
@@ -70,8 +74,10 @@ test-suite learning-rwh-test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       QuickCheck
+    , array
     , base >=4.7 && <5
     , bytestring
+    , containers
     , directory
     , filepath
     , learning-rwh
