@@ -1,4 +1,4 @@
-module PNM
+module Ch10.PNM
   ( Greymap(..)
   ) where
 

@@ -1,4 +1,4 @@
-module Parse
+module Ch10.Parse
   (
     ParseState(..)
   , Parse(..)
@@ -21,7 +21,7 @@ import qualified Data.ByteString.Lazy.Char8 as L8
 import           Data.Char (chr, isDigit, isSpace)
 import           Data.Int (Int64)
 import           Data.Word (Word8)
-import           PNM (Greymap(..))
+import           Ch10.PNM (Greymap(..))
 
 data ParseState =
   ParseState
