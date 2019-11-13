@@ -42,7 +42,7 @@ rightList = map complement <$> leftOddList
     complement '0' = '1'
     complement '1' = '0'
 
-leftEvenLIst = map reverse rightList
+leftEvenList = map reverse rightList
 
 parityList =
   [ "111111"
@@ -65,7 +65,7 @@ listToArray xs = listArray (0, l - 1) xs
 leftOddCodes, leftEvenCodes, rightCodes, parityCodes :: Array Int String
 
 leftOddCodes = listToArray leftOddList
-leftEvenCodes = listToArray leftEvenLIst
+leftEvenCodes = listToArray leftEvenList
 rightCodes = listToArray rightList
 parityCodes = listToArray parityList
 
@@ -125,3 +125,65 @@ parseRGB = parseByte ==> \r ->
 parseTimes :: Int -> Parse a -> Parse [a]
 parseTimes 0 _ = identity []
 parseTimes n p = p ==> \x -> (x :) <$> parseTimes (n - 1) p
+
+luminance :: (Pixel, Pixel, Pixel) -> Pixel
+luminance (r, g, b) = round (r' * 0.30 + g' * 0.59 + b' * 0.11)
+  where r' = fromIntegral r
+        g' = fromIntegral g
+        b' = fromIntegral b
+
+type Greymap = Array (Int,Int) Pixel
+
+pixmapToGreymap :: Pixmap -> Greymap
+pixmapToGreymap = fmap luminance
+
+data Bit = Zero | One
+  deriving (Eq, Show)
+
+threshold :: (Ix k, Integral a) => Double -> Array k a -> Array k Bit
+threshold n a = binary <$> a
+  where
+    binary i
+      | i < pivot = Zero
+      | otherwise = One
+    pivot = round $ least + (greatest - least) * n
+    least = fromIntegral $ choose (<) a
+    greatest = fromIntegral $ choose (>) a
+    choose f =
+      foldA1 $ \x y ->
+        if f x y
+          then x
+          else y
+
+type Run = Int
+type RunLength a = [(Run, a)]
+
+runLength :: Eq a => [a] -> RunLength a
+runLength = map rle . group
+  where
+    rle xs = (length xs, head xs)
+
+runLengths :: Eq a => [a] -> [Run]
+runLengths = map fst . runLength
+
+type Score = Ratio Int
+
+scaleToOne :: [Run] -> [Score]
+scaleToOne xs = map divide xs
+  where
+    divide d = fromIntegral d / divisor
+    divisor = fromIntegral (sum xs)
+
+type ScoreTable = [[Score]]
+
+-- "SRL" means "scaled run length".
+asSRL :: [String] -> ScoreTable
+asSRL = map (scaleToOne . runLengths)
+
+leftOddSRL = asSRL leftOddList
+leftEvenSRL = asSRL leftEvenList
+rightSRL = asSRL rightList
+paritySRL = asSRL parityList
+
+distance :: [Score] -> [Score] -> Score
+distance a b = sum . map abs $ zipWith (-) a b
