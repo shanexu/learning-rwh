@@ -44,7 +44,7 @@ safeHead xs =
 dmap :: (a->b) -> DList a -> DList b
 dmap f = dfoldr go empty
   where
-    go x xs = cons (f x) xs
+    go x = cons (f x)
 
 instance Functor DList where
   fmap = dmap
