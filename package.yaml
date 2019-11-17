@@ -32,6 +32,12 @@ dependencies:
 
 library:
   source-dirs: src
+  exposed-modules:
+    - Lib
+    - Ch10.Parse
+    - Ch10.PNM
+    - Ch12.Barcode
+  other-modules: []
 
 executables:
   learning-rwh-exe:
