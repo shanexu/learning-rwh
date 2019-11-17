@@ -38,6 +38,7 @@ library:
     - Ch10.PNM
     - Ch12.Barcode
     - Ch13.DList
+    - Ch14.Logger
   other-modules: []
 
 executables:
