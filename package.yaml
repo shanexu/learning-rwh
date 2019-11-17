@@ -37,6 +37,7 @@ library:
     - Ch10.Parse
     - Ch10.PNM
     - Ch12.Barcode
+    - Ch13.DList
   other-modules: []
 
 executables:
