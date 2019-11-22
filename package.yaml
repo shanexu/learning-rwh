@@ -39,6 +39,7 @@ library:
     - Ch12.Barcode
     - Ch13.DList
     - Ch14.Logger
+    - Ch14.Carrier
   other-modules: []
 
 executables:
