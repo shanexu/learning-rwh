@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c939868efe82561404edf1a2c7463dc6f69be1d8d5b201b5521d6b1e1c230626
+-- hash: 097a181a208daeddd26cf03e22301f8a14efcb3d6527174faf553f5ffbdc9058
 
 name:           learning-rwh
 version:        0.1.0.0
@@ -44,6 +44,8 @@ library
     , containers
     , directory
     , filepath
+    , mtl
+    , random
     , regex-posix
     , time
   default-language: Haskell2010
@@ -64,6 +66,8 @@ executable learning-rwh-exe
     , directory
     , filepath
     , learning-rwh
+    , mtl
+    , random
     , regex-posix
     , time
   default-language: Haskell2010
@@ -85,6 +89,8 @@ test-suite learning-rwh-test
     , directory
     , filepath
     , learning-rwh
+    , mtl
+    , random
     , regex-posix
     , time
   default-language: Haskell2010
