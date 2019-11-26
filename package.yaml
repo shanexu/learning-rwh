@@ -42,6 +42,7 @@ library:
     - Ch13.DList
     - Ch14.Logger
     - Ch14.Carrier
+    - Ch15.Supply
   other-modules: []
 
 executables:
