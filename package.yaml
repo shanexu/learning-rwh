@@ -46,6 +46,7 @@ library:
     - Ch15.SupplyClass
     - Ch15.MonadHandle
     - Ch15.SafeHello
+    - Ch15.WriterIO
   other-modules: []
 
 executables:
