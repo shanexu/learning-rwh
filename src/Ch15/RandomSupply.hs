@@ -1,5 +1,5 @@
 module Ch15.RandomSupply
-  (
+  ( randomsIO
   ) where
 
 import Ch15.Supply

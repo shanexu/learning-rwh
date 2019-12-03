@@ -43,6 +43,7 @@ library:
     - Ch14.Logger
     - Ch14.Carrier
     - Ch15.Supply
+    - Ch15.SupplyClass
   other-modules: []
 
 executables:

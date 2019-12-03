@@ -9,6 +9,7 @@ pkgs.haskellPackages.shellFor {
   buildInputs = [
     pkgs.bashInteractive
     pkgs.cabal-install
+    pkgs.stack
     pkgs.haskellPackages.apply-refact
     pkgs.haskellPackages.hlint
     pkgs.haskellPackages.stylish-haskell
