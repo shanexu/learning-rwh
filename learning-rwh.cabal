@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: fe88f578e9d57c1872b7727d0bab4e26cdc8d0b4234437ec1ffeecfca544d355
+-- hash: 7b07ef6d1deb6c4465cd67f1979f0b31bbf510d0e70b8645d1b28d2c97c198f6
 
 name:           learning-rwh
 version:        0.1.0.0
@@ -36,6 +36,8 @@ library
       Ch14.Carrier
       Ch15.Supply
       Ch15.SupplyClass
+      Ch15.MonadHandle
+      Ch15.SafeHello
   hs-source-dirs:
       src
   build-depends:

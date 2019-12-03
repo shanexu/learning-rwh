@@ -44,6 +44,8 @@ library:
     - Ch14.Carrier
     - Ch15.Supply
     - Ch15.SupplyClass
+    - Ch15.MonadHandle
+    - Ch15.SafeHello
   other-modules: []
 
 executables:
