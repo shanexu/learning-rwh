@@ -8,6 +8,6 @@ let
       };
     };
   };
-  pkgs = import <nixpkgs> { inherit config; };
+  pkgs = (import ./pkgs.nix).pkgs { inherit config; };
 in
-  pkgs.haskellPackages.learning-rwh
+pkgs.haskellPackages.learning-rwh

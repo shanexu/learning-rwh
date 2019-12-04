@@ -1,7 +1,7 @@
 let
   lrwh = (import ./default.nix);
-  all-hie = (import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {});
-  pkgs = import <nixpkgs> {};
+  all-hies = (import ./pkgs.nix).all-hies {};
+  pkgs = (import ./pkgs.nix).pkgs {};
 in
 pkgs.haskellPackages.shellFor {
   name = "learning-rwh-nix-shell";
@@ -16,6 +16,6 @@ pkgs.haskellPackages.shellFor {
     pkgs.haskellPackages.hasktags
     pkgs.haskellPackages.hoogle
     pkgs.haskellPackages.hindent
-    (all-hie.selection { selector = p: { inherit (p) ghc865; }; })
+    (all-hies.selection { selector = p: { inherit (p) ghc865; }; })
   ];
 }
