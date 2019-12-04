@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: f65e49711f7463438597f565f844bb98b5324cd966e5a2e25e1940c62b2ab12d
+-- hash: 86f29e886c2d4db2078ec521c0d8342c29fa75b2d3e500babb1ccb89798720ec
 
 name:           learning-rwh
 version:        0.1.0.0
@@ -50,6 +50,7 @@ library
     , directory
     , filepath
     , mtl
+    , parsec
     , random
     , regex-posix
     , time
@@ -72,6 +73,7 @@ executable learning-rwh-exe
     , filepath
     , learning-rwh
     , mtl
+    , parsec
     , random
     , regex-posix
     , time
@@ -95,6 +97,7 @@ test-suite learning-rwh-test
     , filepath
     , learning-rwh
     , mtl
+    , parsec
     , random
     , regex-posix
     , time
