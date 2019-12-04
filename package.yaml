@@ -37,6 +37,7 @@ library:
   source-dirs: src
   exposed-modules:
     - Lib
+    - Ch06.JSONClass
     - Ch10.Parse
     - Ch10.PNM
     - Ch12.Barcode

@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 86f29e886c2d4db2078ec521c0d8342c29fa75b2d3e500babb1ccb89798720ec
+-- hash: dacb6dd673c0f68dc8dba6b337e8047fa378577a4342ba4a660673214cb9760d
 
 name:           learning-rwh
 version:        0.1.0.0
@@ -28,6 +28,7 @@ source-repository head
 library
   exposed-modules:
       Lib
+      Ch06.JSONClass
       Ch10.Parse
       Ch10.PNM
       Ch12.Barcode
