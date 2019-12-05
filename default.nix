@@ -3,7 +3,7 @@ let
     packageOverrides = pkgs: rec {
       haskellPackages = pkgs.haskellPackages.override {
         overrides = haskellPackagesNew: haskellPackagesOld: rec {
-          learning-rwh = haskellPackages.callPackage ./learning-rwh.nix { };
+          learning-rwh = haskellPackages.callPackage ./learning-rwh.nix { pcre = pkgs.pcre; };
         };
       };
     };
