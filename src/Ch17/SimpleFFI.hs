@@ -1,9 +1,5 @@
 {-# LANGUAGE ForeignFunctionInterface #-}
 
-module Ch17.SimpleFFI
-  (
-  ) where
-
 import Foreign
 import Foreign.C.Types
 
