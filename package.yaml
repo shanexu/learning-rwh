@@ -50,6 +50,7 @@ library:
     - Ch15.SafeHello
     - Ch15.WriterIO
     - Ch18.CountEntries
+    - Ch18.MaybeT
   other-modules: []
 
 executables:
